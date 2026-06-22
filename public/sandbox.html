@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox - Pruebas de Captura</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script src="https://unpkg.com/tesseract.js@v3.0.3/dist/tesseract.min.js"></script>
+</head>
+<body>
+    <div class="sandbox-container">
+        <h1>Panel de Pruebas de Captura (Sandbox)</h1>
+        
+        <div class="card">
+            <h2>1. Control de Cámara</h2>
+            <div id="reader" style="width: 100%; max-width: 500px; margin: 0 auto;"></div>
+            <div class="actions">
+                <button id="btn-scan-barcode">Iniciar Escáner Barras/QR</button>
+                <button id="btn-capture-ocr">Capturar Texto (OCR)</button>
+                <button id="btn-stop">Detener Cámara</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>2. Datos Capturados</h2>
+            <div class="result-box">
+                <p><strong>Tipo de Lectura:</strong> <span id="log-type">-</span></p>
+                <p><strong>Resultado Raw:</strong> <span id="log-raw">-</span></p>
+                <p><strong>Filtrado (Regex):</strong> <span id="log-filtered">-</span></p>
+            </div>
+        </div>
+
+        <canvas id="ocr-canvas" style="display: none;"></canvas>
+    </div>
+
+    <script src="js/scanner.js"></script>
+    <script src="js/ocr.js"></script>
+    <script src="js/sandbox_app.js"></script>
+</body>
+</html>
